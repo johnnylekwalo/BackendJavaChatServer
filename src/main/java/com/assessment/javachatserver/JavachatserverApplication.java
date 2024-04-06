@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JavachatserverApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(JavachatserverApplication.class, args);
+
+
 	}
 
 }
