@@ -1,0 +1,25 @@
+spring :
+  application:
+    name: javachatserver
+  datasource:
+    url: jdbc:h2:mem:testdb
+    sdriverClassName: org.h2.Driver
+    username: sa
+    password: password
+    enabled: true
+  
+  # H2 Configuration
+  jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+  
+  # H2 Console
+  h2.console.path: /h2-console
+  
+  # Spring Security Configuration
+  security:
+      user:
+        name: user
+        password: password
+
+
+
