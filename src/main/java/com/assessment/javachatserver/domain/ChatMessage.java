@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-@Table(name = "chat_message")
+@Table
 public class ChatMessage {
 
     @Id

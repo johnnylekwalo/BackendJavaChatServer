@@ -7,7 +7,7 @@ import lombok.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "users")
+@Table
 public class ChatUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
