@@ -35,14 +35,12 @@ public class DataInitializer implements CommandLineRunner {
             System.out.println("Database already initialized");
         }
 
-        if (chatRoomRepository.count() == 0) {
+
             // Create and save dummy users
             ChatRoom chatRoom = new ChatRoom();
             chatRoom.setName("test");
             chatRoomRepository.save(chatRoom);
-        } else {
-            System.out.println("Chat Room Database already initialized");
-        }
+
 
         if (chatMessageRepository.count() == 0) {
             // Create and save dummy users

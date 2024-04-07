@@ -21,24 +21,27 @@ public class ChatController {
     // Endpoint to send a message
     @PostMapping("/messages")
     public ResponseEntity<?> sendMessage(@RequestBody ChatMessage chatMessage) {
-        // Logic to handle sending a message
         ChatMessage chatMessageSent = chatService.createMessages(chatMessage);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(chatMessageSent);
     }
 
     @GetMapping("/messages")
     public ResponseEntity<List<ChatMessage>> getMessages() {
-        // Logic to handle sending a message
         List<ChatMessage> messages = chatService.getMessages();
         return ResponseEntity.ok(messages);
     }
 
     // Endpoint to get chat history for a room
-    @GetMapping("/chat/{chatRoomId}/history")
-    public ResponseEntity<List<ChatMessage>> getChatHistory(@PathVariable Long chatRoomId) {
-        List<ChatMessage> history = chatService.getChatHistory(chatRoomId);
+    @GetMapping("/chat/{chatRoomName}/history")
+    public ResponseEntity<List<ChatMessage>> getChatHistory(@PathVariable String chatRoomName) {
+        List<ChatMessage> history = chatService.getChatHistory(chatRoomName);
         return ResponseEntity.ok(history);
     }
 
     // Additional endpoints as needed
+    @DeleteMapping("/messages/{id}")
+    public ResponseEntity<Void> getChatHistory(@PathVariable Long id) {
+        chatService.getDeleteChatMessage(id);
+        return ResponseEntity.noContent().build();
+    }
 }
