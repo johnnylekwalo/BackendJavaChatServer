@@ -72,10 +72,10 @@ class ChatControllerTest {
 
     @Test
     @Transactional
-    void createChatUser() throws Exception {
+    void createChatMessage() throws Exception {
         long databaseSizeBeforeCreate = getRepositoryCount();
-        // Create the ChatUser
-        var returnedChatUser = om.readValue(
+        // Create the ChatMessage
+        var returnedChatMessage = om.readValue(
                 restChatMessageMockMvc
                         .perform(post(ENTITY_API_URL).contentType(MediaType.APPLICATION_JSON).content(om.writeValueAsBytes(chatMessage)))
                         .andExpect(status().isOk())
