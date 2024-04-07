@@ -149,6 +149,40 @@
 				"url": "http://localhost:8080/api/chat/test/history"
 			},
 			"response": []
+		},
+		{
+			"name": "Get History of Messages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78379759-e8a0-4a72-a69f-19d3c3b96e28",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b8bd1530-1408-45f8-98b6-c3d401e17cde",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/chat/test/history"
+			},
+			"response": []
 		}
 	]
 }
