@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "5cc3554f-e78c-42c3-a539-6f618c9531c0",
+		"name": "AssessmentTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Chat Messages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78379759-e8a0-4a72-a69f-19d3c3b96e28",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1b0a85a4-5df6-4b90-8592-19022e602fde",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/messages"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78379759-e8a0-4a72-a69f-19d3c3b96e28",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "718bfc86-c00c-44f4-a94b-ca38d8318150",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/messages/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Message in Chat Room",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78379759-e8a0-4a72-a69f-19d3c3b96e28",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "cabbe3c1-4a2e-43ce-a8bd-df79bbed0781",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\" : \"content test another one\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/messages"
+			},
+			"response": []
+		},
+		{
+			"name": "Get History of Messages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78379759-e8a0-4a72-a69f-19d3c3b96e28",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "98920134-cdac-417e-a3ac-bfa011789c9a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "user"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/chat/test/history"
+			},
+			"response": []
+		}
+	]
+}
